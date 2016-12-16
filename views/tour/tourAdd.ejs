@@ -1,0 +1,55 @@
+<%- include("../includes/header.ejs", {title:"Add A New Tour"}); %>
+<h1><font color="#6497b1"> Add New Tour</font></h1>
+
+<style>
+
+    body{
+        background-color: #011f4b;
+    }
+
+
+</style>
+
+<form action="/tour/insert" method="get">
+    <font color="#6497b1"> Tour Name:</font> <input id="tour_name" name="tour_name" type="text" />
+    <br />
+    <br />
+        <font color="#6497b1"> Headliner:</font> <input id="headliner" name="headliner" type="text" />
+    <br />
+    <br />
+            <font color="#6497b1"> Start Year:</font> <input id="start_year" name="start_year" type="text" />
+    <br />
+    <br />
+                <font color="#6497b1"> Start Month:</font> <input id="start_month" name="start_month" type="text" />
+    <br />
+    <br />
+                    <font color="#6497b1"> End Year: </font><input id="end_year" name="end_year" type="text" />
+    <br />
+    <br />
+                        <font color="#6497b1"> End Month:</font> <input id="end_month" name="end_month" type="text" />
+    <br />
+    <br />
+
+    <font color="#6497b1"> </font>
+    <br />
+    <select id="country_name" name="country_name" multiple="multiple">
+        <% for(var i=0; countrya.length > i; i++ ) { %>
+        <option value="<%= countrya[i].country_name %>"><%= countrya[i].country_name %></option>
+        <% } %>
+    </select>
+    <br />
+    <br />
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#country_name').multiselect();
+        });
+    </script>
+
+    <br />
+    <input type="submit" />
+
+</form>
+<%- include("../includes/footer.ejs"); %>

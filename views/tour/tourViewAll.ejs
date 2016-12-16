@@ -1,0 +1,27 @@
+<%- include("../includes/header.ejs", {title:"Tour - View All"}); %>
+
+<style>
+    body{
+        background-color: #011f4b;
+    }
+
+</style>
+
+<h1><font color="#6497b1">Tours</font></h1>
+<a href="/tour/add" style="color:navajowhite"> Add New Tour</a> <br />
+
+<br />
+
+<table border="1" id="2">
+    <tr bgcolor="#696969"><th><font color="#6497b1">Tour Name</font></th><th><font color="#6497b1">Headliner</font></th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td bgcolor="#6497b1"> <a href="/tour/?tour_name=<%= result[i].tour_name %>" style="color:navajowhite"><%= result[i].tour_name %></a></td>
+        <td bgcolor="#196ba0"> <font color="#fffaf0"><%= result[i].headliner%></font></td>
+        <td bgcolor=" #6497b1">
+        </td>
+    </tr>
+
+    <% } %>
+</table>
+<%- include("../includes/footer.ejs"); %>

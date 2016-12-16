@@ -1,0 +1,34 @@
+<html>
+
+<style>
+    body{
+        background-color: #011f4b;
+    }
+
+</style>
+<head>
+    <title>Guitarists</title>
+</head>
+<body>
+<h1><font color = "#6497b1"> Guitarists</font></h1>
+<a href="/guitarist/add"style="color:navajowhite">Add A New Guitarist</a> <br />
+
+<br />
+
+
+<table border="1">
+    <tr bgcolor="#696969"><th><font color="#6497b1">Guitarist Name</font></th>  <th><font color="#6497b1">Action</font></th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td bgcolor="#196ba0"><a href="/guitarist/?guitarist=<%= result[i].guitarist %>"style="color:navajowhite"> <%= result[i].guitarist %> </a></td>
+        <td><form action="/guitarist/delete/">
+                <input type="hidden" name="guitarist" id="guitarist" value="<%= result[i].guitarist %>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>

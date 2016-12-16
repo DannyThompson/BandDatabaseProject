@@ -1,0 +1,26 @@
+<%- include("../includes/header.ejs", {title:"Add A New Country"}); %>
+<h1><font color="#6497b1"> Add New Country</font></h1>
+
+<style>
+
+    body{
+        background-color: #011f4b;
+    }
+
+
+</style>
+
+<form action="/country/insert" method="get">
+    <font color="#6497b1"> Country Name:</font> <input id="country_name" name="country_name" type="text" />
+    <br />
+    <br />
+    <font color="#6497b1"> Continent: </font> <input id="continent" name="continent" type="text" />
+    <br />
+
+
+
+    <br />
+    <input type="submit" />
+
+</form>
+<%- include("../includes/footer.ejs"); %>

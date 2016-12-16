@@ -1,0 +1,32 @@
+<%- include("../includes/header.ejs", {title:"Band - View All"}); %>
+
+<style>
+    body{
+        background-color: #011f4b;
+    }
+
+</style>
+
+<h1><font color="#6497b1">Bands</font></h1>
+<a href="/band/add" style="color:navajowhite"> Add New Band</a> <br />
+
+<br />
+
+<table border="1" id="2">
+    <tr bgcolor="#696969"><th><font color="#6497b1">Band Name</font></th><th><font color="#6497b1">Singer</font></th><th><font color="#6497b1">Bassist</font></th><th><font color="#6497b1">Drummer</font></th><th><font color="#6497b1">Actions</font></th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td bgcolor="#6497b1"> <a href="/band/?band_name=<%= result[i].band_name %>" style="color:navajowhite"><%= result[i].band_name %></a></td>
+        <td bgcolor="#196ba0"> <font color="#fffaf0"><%= result[i].singer%></font> </td>  <td bgcolor=" #6497b1">  <font color="#fffaf0"><%= result[i].bassist%> </font> </td>  <td bgcolor="#196ba0"> <font color="#fffaf0"> <%= result[i].drummer %> </font> </td>
+        <td bgcolor=" #6497b1">
+            <button onclick="event.preventDefault();window.location.href='/band/edit/?band_name=<%= result[i].band_name %>'">Edit</button>
+            <form action="/band/delete/" style="display:inline;">
+                <input type="hidden" name="band_name" id="band_name" value="<%= result[i].band_name %>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+
+    <% } %>
+</table>
+<%- include("../includes/footer.ejs"); %>

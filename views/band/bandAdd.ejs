@@ -1,0 +1,32 @@
+<%- include("../includes/header.ejs", {title:"Add A New Band"}); %>
+<h1><font color="#6497b1"> Add New Band </font></h1>
+
+<style>
+
+    body{
+        background-color: #011f4b;
+    }
+
+
+</style>
+
+<form action="/band/insert" method="get">
+    <font color="#6497b1"> Band Name:</font> <input id="band_name" name="band_name" type="text" />
+    <br />
+    <br />
+    <font color="#6497b1"> Singer: </font><input id="singer" name="singer" type="text" />
+    <br />
+    <font color="#6497b1"> Bassist: </font><input id="bassist" name="bassist" type="text" />
+    <br />
+    <font color="#6497b1"> Drummer:</font> <input id="drummer" name="drummer" type="text" />
+    <br />
+
+
+    <!--To Add a new guitarist, you have to do that through the guitarists add view -->
+
+
+    <br />
+    <input type="submit" />
+
+</form>
+<%- include("../includes/footer.ejs"); %>

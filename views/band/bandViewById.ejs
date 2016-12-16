@@ -1,0 +1,83 @@
+<%- include("../includes/header.ejs", {title:"Bands - " + result[0].band_name}); %>
+
+
+
+<style>
+
+    body{
+        background-color: #011f4b;
+    }
+
+
+</style>
+
+
+<h1>Bands</h1>
+<ul>
+    <li><font color="#6497b1">Band Name: </font> <font color="#fffaf0"><%= result[0].band_name %></font></li>
+</ul>
+
+    </br>
+    <li><font color="#6497b1">Singer:</font>
+        <ul><font color="#fffaf0">
+            <% for(var i=0; singers.length > i; i++ ) { %>
+            <li><%= singers[i]%></li>
+                <% } %>
+        </font></ul>
+    </li>
+</ul>
+</br>
+
+</br>
+<li><font color="#6497b1">Bassist</font>
+    <ul><font color="#fffaf0">
+        <% for(var i=0; bassists.length > i; i++ ) { %>
+        <li><%= bassists[i]%></li>
+            <% } %>
+   </font></ul>
+</li>
+</ul>
+
+</br>
+
+</br>
+<li><font color="#6497b1">Drummer: </font>
+    <ul><font color="#fffaf0">
+        <% for(var i=0; drummers.length > i; i++ ) { %>
+        <li><%= drummers[i]%></li>
+            <% } %>
+    </font></ul>
+</li>
+</ul>
+</br>
+
+
+    </br>
+    <li><font color="#6497b1">Guitarist(s): </font>
+        <ul><font color="#fffaf0">
+            <% for(var i=0; guitaristsz.length > i; i++ ) { %>
+            <li><%= guitaristsz[i]%></li>
+            <% } %>
+        </font></ul>
+    </li>
+</ul>
+</br>
+
+</br>
+<li><font color="#6497b1">Tour(s): </font>
+    <ul><font color="#fffaf0">
+            <% for(var i=0; tours.length > i; i++ ) { %>
+            <li><%= tours[i]%></li>
+            <% } %>
+        </font></ul>
+</li>
+</ul>
+</br>
+
+
+
+
+<a href="/band/all"><< back</a>
+
+
+<%- include("../includes/footer.ejs"); %>

@@ -1,0 +1,37 @@
+<%- include("../includes/header.ejs", {title:"Guitarists - " + result[0].guitarist}); %>
+
+
+
+<style>
+
+    body{
+        background-color: #011f4b;
+    }
+
+
+</style>
+
+
+<h1>Guitarists</h1>
+<ul>
+    <li><font color="#6497b1">Guitarist: </font> <font color="#fffaf0"><%= result[0].guitarist %></font></li>
+</ul>
+
+<!-- A guitarist could potentially be part of multiple bands, so return them all. -->
+</br>
+<li><font color="#6497b1">Band Name(s):</font>
+    <ul><font color="#fffaf0">
+            <% for(var i=0; result.length > i; i++ ) { %>
+            <li><%= result[i].band_name%></li>
+            <% } %>
+        </font></ul>
+</li>
+</ul>
+</br>
+
+
+
+<a href="/guitarist/all"><< back</a>
+
+
+<%- include("../includes/footer.ejs"); %>

@@ -1,0 +1,29 @@
+<%- include("../includes/header.ejs", {title:"Country - View All"}); %>
+
+<style>
+    body{
+        background-color: #011f4b;
+    }
+
+</style>
+
+<h1><font color="#6497b1">Countries</font></h1>
+<a href="/country/add" style="color:navajowhite"> Add New Country</a> <br />
+
+<br />
+
+<table border="1" id="2">
+    <tr bgcolor="#696969"><th><font color="#6497b1">Country Name</font></th><th><font color="#6497b1">Actions</font></th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td bgcolor="#196ba0"> <font color="#fffaf0"><%= result[i].country_name%></font> </td>
+        <td bgcolor=" #6497b1">
+                <input type="hidden" name="country_name" id="country_name" value="<%= result[i].country_name %>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+
+    <% } %>
+</table>
+<%- include("../includes/footer.ejs"); %>

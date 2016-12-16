@@ -1,0 +1,94 @@
+<%- include("../includes/header.ejs", {title:"Bands - " + result[0].tour_name}); %>
+
+
+
+<style>
+
+    body{
+        background-color: #011f4b;
+    }
+
+
+</style>
+
+
+<h1>Tours</h1>
+<ul>
+    <li><font color="#6497b1">Tour Name: </font> <font color="#fffaf0"><%= result[0].tour_name %></font></li>
+</ul>
+
+</br>
+<li><font color="#6497b1">Headliner:</font>
+    <ul><font color="#fffaf0">
+            <% for(var i=0; headliners.length > i; i++ ) { %>
+            <li><%= headliners[i]%></li>
+            <% } %>
+        </font></ul>
+</li>
+</ul>
+</br>
+
+</br>
+<li><font color="#6497b1">Start Year</font>
+    <ul><font color="#fffaf0">
+            <% for(var i=0; start_years.length > i; i++ ) { %>
+            <li><%= start_years[i]%></li>
+            <% } %>
+        </font></ul>
+</li>
+</ul>
+
+</br>
+
+</br>
+<li><font color="#6497b1">Start Month: </font>
+    <ul><font color="#fffaf0">
+            <% for(var i=0; start_months.length > i; i++ ) { %>
+            <li><%= start_months[i]%></li>
+            <% } %>
+        </font></ul>
+</li>
+</ul>
+</br>
+
+</br>
+<li><font color="#6497b1">End Year</font>
+    <ul><font color="#fffaf0">
+            <% for(var i=0; end_years.length > i; i++ ) { %>
+            <li><%= end_years[i]%></li>
+            <% } %>
+        </font></ul>
+</li>
+</ul>
+
+</br>
+<li><font color="#6497b1">End Month: </font>
+    <ul><font color="#fffaf0">
+            <% for(var i=0; end_months.length > i; i++ ) { %>
+            <li><%= end_months[i]%></li>
+            <% } %>
+        </font></ul>
+</li>
+</ul>
+</br>
+
+
+</br>
+<li><font color="#6497b1">Countries: </font>
+    <ul><font color="#fffaf0">
+            <% for(var i=0; countrys.length > i; i++ ) { %>
+            <li><%= countrys[i]%></li>
+            <% } %>
+        </font></ul>
+</li>
+</ul>
+</br>
+
+
+
+
+
+<a href="/tour/all"><< back</a>
+
+
+<%- include("../includes/footer.ejs"); %>
